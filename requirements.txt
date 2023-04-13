@@ -1,0 +1,6 @@
+# requirement.txt
+# Run pip install -r requirements.txt
+
+db-sqlite3==3.41.2
+pandas==1.5.2
+ckanapi==4.0
