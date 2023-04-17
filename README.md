@@ -1,8 +1,8 @@
-# SQLite - Carga Despesa do DadosMG
+# SQLite
 
+## Instalação no Windows
 
-
-## Instruções de instalação e manipulações básicas do DuckDB no Windows
+Após clonar o projeto, seguir as etapas a seguir.
 
 
 ### Criar ambiente virtual do projeto
@@ -13,68 +13,75 @@ python -m venv venv
 
 ### Ativar ambiente virtual do projeto
 
-Linha de comando (cmd) do Windows:
-```python
+Linha de comando no Windows:
+```cmd
+cd diretorio/do/projeto
 venv\Scripts\activate
 ```
 
 Git bash:
-```python
+```gitbash
+cd diretorio/do/projeto
 source venv\Scripts\activate
 ```
 
-### Criar arquivo de requerimentos
-```python
-touch requirements.txt
-```
-
-### Abrir o arquivo e inserir os seguintes requerimentos
-
-
-	pandas==1.5.2
-	db-sqlite3==3.41.2
-	ckanapi==4.0
-
-### Instala requerimentos
+### Instalar requerimentos
 ```python
 pip install -r requirements.txt
 ```
 
-### instala jupyter notebook
+### Instalar Jupyter Notebook (opcional)
 ```python
 pip install notebook
 ```
 
-### Inicia o jupyter notebook
-```python
-jupyter notebook
+## Execução no Python
+
+### Ativar o ambiente virtual
+
+Linha de comando no Windows:
+```cmd
+cd diretorio/do/projeto
+venv\Scripts\activate
 ```
 
-### Execução no Jupyter Notebook
-Baixar os arquivos csv.gz do portal [dadosmg](https://dados.mg.gov.br/dataset/despesa), salvá-los na pasta \datasets e extrair todos os arquivos csv. Após isso abrir o notebook 'dadosmg_basics.ipynb' no jupyter e executar.  
+Git bash:
+```gitbash
+cd diretorio/do/projeto
+source venv\Scripts\activate
+```
 
-**NOTA**: Durante os testes realizados o kernel do Jupyter se mostrou instável, não conseguindo importar os dados corretamente e reiniciando durante o processo.
+### Executar makefile
 
-### Execução no Python
-No git bash utilizar as diretivas do makefile.
-
-Baixar arquivos tar.gz por portal dadosmg:  
+Baixar arquivos tar.gz do portal dadosmg:  
 ```python
 make download
 ```
 
-Executar script de carga de dados.  
+Executar script de carga de dados:  
 ```python
 make run
 ```
 
-Fazer download dos arquivos e executa script de carga.
+Fazer download dos arquivos e executar o script de carga de dados:
 ```python
 make all
 ```
 
+## Execução no Jupyter Notebook
 
-### Visualização de Dados
+Ativar o ambiente virtual:
+```gitbash
+cd diretorio/do/projeto
+source venv\Scripts\activate
+```
+
+Baixar os arquivos csv.gz do portal [dadosmg](https://dados.mg.gov.br/dataset/despesa), salvá-los na pasta \datasets e extrair todos os arquivos csv. Após isso abrir o notebook 'dadosmg_basics.ipynb' no jupyter e executar.  
+
+**NOTA**: Durante os testes realizados o kernel do Jupyter se mostrou instável, não conseguindo importar os dados corretamente e reiniciando durante o processo. Logo é recomendado utilizá-lo para consultas e análises, mas no momento não mais para realizar as cargas de dados. O arquivo 'dadosmg_basics.ipynb' contém snippets de manipulações básicas utilizando o DuckDB em python.
+
+
+## Visualização de Dados
 
 A ferramenta open source [DB Browser for SQLite](https://sqlitebrowser.org/) pode ser utilizada para visualizar a base de dados do SQLite.
 
