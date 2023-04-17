@@ -76,6 +76,6 @@ make all
 
 ### Visualização de Dados
 
-A ferramenta open source [TAD Viewer](https://www.tadviewer.com/) pode ser utilizada para visualizar a base de dados do DuckDB ou arquivos csv, parquet, json antes ou durante o processo de importação.
+A ferramenta open source [DB Browser for SQLite](https://sqlitebrowser.org/) pode ser utilizada para visualizar a base de dados do SQLite.
 
-![imagem](images/tad-home.png)
+![imagem](images/db-browser-sqlite-home.png)
