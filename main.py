@@ -43,7 +43,7 @@ def tables_from_csv(file_paths, con):
         head, tail = os.path.split(file)
         table_name = tail.split('.')[0]
 
-        df = pd.read_csv(file, delimiter=';', decimal=',')
+        df = pd.read_csv(file, delimiter=';', decimal='.')
 
         # if_exists{‘fail’, ‘replace’, ‘append’}, default ‘fail’
         df.to_sql(table_name, con, if_exists='replace', index=False)
@@ -62,7 +62,7 @@ def append_from_csv(file_paths_append, tbl_agg_name):
         table_name, file_extension = os.path.splitext(tail)
         print(f'Lendo:', file)
 
-        df = pd.read_csv(file, delimiter=';', decimal=',')
+        df = pd.read_csv(file, delimiter=';', decimal='.')
 
         try:
             df.to_sql(tbl_agg_name, con, if_exists='append', index=False)  # if_exists{‘fail’, ‘replace’, ‘append’}, default ‘fail’
@@ -75,7 +75,7 @@ def append_from_csv(file_paths_append, tbl_agg_name):
 
     print('-------------------------------------------------------')
 
-    print('Total de linhas tabelas lidas:', num_linhas)
+    print('Total de linhas das tabelas lidas:', num_linhas)
 
     # alerta para falha no carregamento de arquivos. Arquivos somente com cabeçalhos geram esse erro.
     if exec_error:
